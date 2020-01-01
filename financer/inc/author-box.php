@@ -9,7 +9,9 @@
 
 /**
  * Author archive avatar
- *
+ * @param $title
+ * @param $description
+ * @param $context
  */
 function fs_author_archive_avatar( $title, $description, $context ) {
 	if( ! is_author() || get_query_var( 'paged' ) )
@@ -21,7 +23,9 @@ add_filter( 'genesis_archive_title_descriptions', 'fs_author_archive_avatar', 9,
 
 /**
  * Author archive introduction
- *
+ * @param $title
+ * @param $description
+ * @param $context
  */
 function fs_author_intro( $title, $description, $context ) {
 	if( ! is_author() || get_query_var( 'paged' ) )

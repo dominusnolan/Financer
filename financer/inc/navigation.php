@@ -34,7 +34,9 @@ add_action( 'genesis_header', 'fs_site_header', 11 );
 
 /**
  * Nav Extras
- *
+ * @param $menu
+ * @param $args
+ * @return string
  */
 function fs_nav_extras( $menu, $args ) {
 

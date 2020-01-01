@@ -9,7 +9,8 @@
 
 /**
  * Templates and Page IDs without editor
- *
+ * @param bool $id
+ * @return bool
  */
 function fs_disable_editor( $id = false ) {
 
@@ -30,7 +31,9 @@ function fs_disable_editor( $id = false ) {
 
 /**
  * Disable Gutenberg by template
- *
+ * @param $can_edit
+ * @param $post_type
+ * @return bool
  */
 function fs_disable_gutenberg( $can_edit, $post_type ) {
 

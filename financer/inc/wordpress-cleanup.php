@@ -9,7 +9,7 @@
 
 /**
  * Dequeue jQuery Migrate
- *
+ * @param $scripts
  */
 function fs_dequeue_jquery_migrate( &$scripts ){
 	if( !is_admin() ) {
@@ -21,7 +21,8 @@ add_filter( 'wp_default_scripts', 'fs_dequeue_jquery_migrate' );
 
 /**
  * Singular body class
- *
+ * @param $classes
+ * @return array
  */
 function fs_singular_body_class( $classes ) {
 	if( is_singular() )
@@ -32,7 +33,8 @@ add_filter( 'body_class', 'fs_singular_body_class' );
 
 /**
  * Clean body classes
- *
+ * @param $classes
+ * @return array
  */
 function fs_clean_body_classes( $classes ) {
 
@@ -54,7 +56,8 @@ add_filter( 'body_class', 'fs_clean_body_classes', 20 );
 
 /**
  * Clean Nav Menu Classes
- *
+ * @param $classes
+ * @return array
  */
 function fs_clean_nav_menu_classes( $classes ) {
 	if( ! is_array( $classes ) )
@@ -93,7 +96,8 @@ add_filter( 'nav_menu_css_class', 'fs_clean_nav_menu_classes', 5 );
 
 /**
  * Clean Post Classes
- *
+ * @param $classes
+ * @return array
  */
 function fs_clean_post_classes( $classes ) {
 
@@ -111,7 +115,8 @@ add_filter( 'post_class', 'fs_clean_post_classes', 5 );
 
 /**
  * Archive Title, remove prefix
- *
+ * @param $title
+ * @return string
  */
 function fs_archive_title_remove_prefix( $title ) {
 	$title_pieces = explode( ': ', $title );
@@ -125,7 +130,12 @@ add_filter( 'get_the_archive_title', 'fs_archive_title_remove_prefix' );
 
 /**
  * Staff comment class
- *
+ * @param $classes
+ * @param $class
+ * @param $comment_id
+ * @param $comment
+ * @param $post_id
+ * @return array
  */
 function fs_staff_comment_class( $classes, $class, $comment_id, $comment, $post_id ) {
 	if( empty( $comment->user_id ) )
@@ -141,7 +151,8 @@ add_filter( 'comment_class', 'fs_staff_comment_class', 10, 5 );
 
 /**
  * Remove avatars from comment list
- *
+ * @param $avatar
+ * @return string
  */
 function fs_remove_avatars_from_comments( $avatar ) {
 	global $in_comment_loop;
@@ -151,7 +162,8 @@ add_filter( 'get_avatar', 'fs_remove_avatars_from_comments' );
 
 /**
  * Comment form, button class
- *
+ * @param $args
+ * @return mixed
  */
 function fs_comment_form_button_class( $args ) {
 	$args['class_submit'] = 'submit wp-block-button__link';

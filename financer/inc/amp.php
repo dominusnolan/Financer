@@ -17,7 +17,8 @@ function fs_is_amp() {
 
 /**
  * WPForms AMP Support
- *
+ * @param $is_pro
+ * @return bool
  */
 function be_wpforms_amp_support( $is_pro ) {
 	if( fs_is_amp() )
@@ -88,8 +89,8 @@ function fs_amp_toggle( $state = '', $disable = array() ) {
 /**
  * AMP Nav Dropdown toggle and class attributes.
  *
- * @param string $theme_location Theme location.
- * @param int    $depth          Depth.
+ * @param bool $theme_location Theme location.
+ * @param int $depth Depth.
  * @return string The class and on attributes.
  */
 function fs_amp_nav_dropdown( $theme_location = false, $depth = 0 ) {

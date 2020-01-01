@@ -178,7 +178,8 @@ add_action( 'after_setup_theme', 'genesis_sample_localization_setup' );
 
 /**
  * Template Hierarchy
- *
+ * @param $template
+ * @return
  */
 function fs_template_hierarchy( $template ) {
 	if( is_home() )

@@ -11,7 +11,8 @@ add_filter( 'genesis_pre_get_option_sie_layout', '__genesis_return_full_width_co
 
 /**
  * Blog Archive Body Class
- *
+ * @param $classes
+ * @return array
  */
 function fs_blog_archive_body_class( $classes ) {
 	$classes[] = 'archive';

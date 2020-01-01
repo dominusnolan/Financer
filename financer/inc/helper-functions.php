@@ -21,8 +21,8 @@ add_filter( 'fs_the_content', 'do_shortcode'       );
  * Get the first term attached to post
  *
  * @param string $taxonomy
- * @param string/int $field, pass false to return object
- * @param int $post_id
+ * @param bool $field
+ * @param bool $post_id
  * @return string/object
  */
 function fs_first_term( $taxonomy = 'category', $field = false, $post_id = false ) {
@@ -95,7 +95,8 @@ function fs_class( $base_classes, $optional_class, $conditional ) {
 /**
  *  Background Image Style
  *
- * @param int $image_id
+ * @param bool $image_id
+ * @param string $image_size
  * @return string $output
  */
 function fs_bg_image_style( $image_id = false, $image_size = 'full' ) {
@@ -113,7 +114,8 @@ function fs_bg_image_style( $image_id = false, $image_size = 'full' ) {
  *
  * All icons are assumed to have equal width and height, hence the option
  * to only specify a `$size` parameter in the svg methods.
- *
+ * @param array $atts
+ * @return string|string[]|void|null
  */
 function fs_icon( $atts = array() ) {
 
@@ -157,7 +159,8 @@ function fs_icon( $atts = array() ) {
 
 /**
  * Has Action
- *
+ * @param $hook
+ * @return bool
  */
 function fs_has_action( $hook ) {
 	ob_start();

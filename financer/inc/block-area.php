@@ -82,10 +82,11 @@ class fs_Block_Area {
 		}
 	}
 
-	/**
-	 * Show block area
-	 *
-	 */
+    /**
+     * Show block area
+     * @param string $location
+     * @param bool $has_wrap
+     */
 	function show( $location = '', $has_wrap = false ) {
 		if( ! $location )
 			return;

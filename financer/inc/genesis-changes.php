@@ -55,7 +55,8 @@ unregister_sidebar( 'sidebar-alt' );
 
 /**
  * Remove Genesis Templates
- *
+ * @param $page_templates
+ * @return mixed
  */
 function fs_remove_genesis_templates( $page_templates ) {
 	unset( $page_templates['page_archive.php'] );
@@ -77,7 +78,8 @@ add_filter( 'genesis_search_form', 'fs_search_form' );
 
 /**
  * Disable customizer theme settings
- *
+ * @param $config
+ * @return mixed
  */
 function fs_disable_customizer_theme_settings( $config ) {
 	$remove = [ 'genesis_header', 'genesis_single', 'genesis_archives', 'genesis_footer' ];

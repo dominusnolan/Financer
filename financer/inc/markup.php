@@ -24,8 +24,7 @@ add_filter( 'genesis_markup_nav-secondary_open', 'fs_nav_menu_class', 10, 2 );
 /**
  * Change '.content-sidebar-wrap' to '.content-area'
  *
- * @param string $open, opening markup
- * @param array $args, markup args
+ * @param $attributes
  * @return string
  */
 function fs_change_content_sidebar_wrap( $attributes ) {
@@ -37,8 +36,7 @@ add_filter( 'genesis_attr_content-sidebar-wrap', 'fs_change_content_sidebar_wrap
 /**
  * Change '.content' to '.site-main'
  *
- * @param string $open, opening markup
- * @param array $args, markup args
+ * @param $attributes
  * @return string
  */
 function fs_change_content( $attributes ) {
@@ -49,7 +47,8 @@ add_filter( 'genesis_attr_content', 'fs_change_content' );
 
 /**
  * Add #main-content to .site-inner
- *
+ * @param $attributes
+ * @return mixed
  */
 function fs_site_inner_id( $attributes ) {
 	$attributes['id'] = 'main-content';
@@ -59,7 +58,8 @@ add_filter( 'genesis_attr_site-inner', 'fs_site_inner_id' );
 
 /**
  * Remove padding from .site-inner
- *
+ * @param $attributes
+ * @return mixed
  */
 function fs_site_inner_no_padding( $attributes ) {
 	$attributes['class'] .= ' full';
@@ -69,7 +69,8 @@ function fs_site_inner_no_padding( $attributes ) {
 
 /**
  * Change skip link to #main-content
- *
+ * @param $skip_links
+ * @return array
  */
 function fs_main_content_skip_link( $skip_links ) {
 
@@ -88,7 +89,8 @@ add_filter( 'genesis_skip_links_output', 'fs_main_content_skip_link' );
 
 /**
  * Archive Description markup
- *
+ * @param $markup
+ * @return string|string[]
  */
 function fs_archive_description_markup( $markup ) {
 	return str_replace( array( '<div', '</div' ), array( '<header', '</header' ), $markup );
@@ -108,7 +110,8 @@ add_filter( 'genesis_markup_search-description_close', 'fs_archive_description_m
 
 /**
  * Archive Pagination markup
- *
+ * @param $markup
+ * @return string|string[]
  */
 function fs_archive_pagination_markup( $markup ) {
 	return str_replace( array( '<div', '</div' ), array( '<nav', '</nav' ), $markup );
@@ -120,7 +123,8 @@ add_filter( 'genesis_attr_cpt-archive-description', 'genesis_attributes_cpt_arch
 
 /**
  * Search Header Classes
- *
+ * @param $attributes
+ * @return mixed
  */
 function fs_search_header_classes( $attributes ) {
 	$attributes['class'] = 'archive-description search-description';
